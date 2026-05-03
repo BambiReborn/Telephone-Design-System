@@ -4,7 +4,7 @@ A simple JavaScript implementation of the **Observer Design Pattern**
 using a telephone system as a use case.
 
 ## How It Works
-A `Telephone` class maintains a list of phone numbers and a list of observers.
+A `Telephone class` maintains a list of phone numbers and a list of observers.
 Whenever a phone number is dialled, all registered observers are 
 automatically notified and react in their own way.
 
@@ -16,7 +16,7 @@ automatically notified and react in their own way.
 
 ## How To Run
 ```bash
-node telephone.js
+node designPattern.js
 ```
 
 ## Concepts Demonstrated
