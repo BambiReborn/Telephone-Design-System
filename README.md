@@ -1,3 +1,4 @@
+
 # Telephone Observer System
 
 A simple JavaScript implementation of the **Observer Design Pattern** 
@@ -16,7 +17,7 @@ automatically notified and react in their own way.
 
 ## How To Run
 ```bash
-node designPattern.js
+node telephoneDesignPattern.js
 ```
 
 ## Concepts Demonstrated
