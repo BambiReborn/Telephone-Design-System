@@ -1,32 +1,14 @@
 
 
-// 1. TELEPHONE CLASS — The main subject
+// 1. TELEPHONE CLASS
 
 class Telephone {
     constructor() {
         // Constructor first, to run them automatically
-        this.phoneNumbers = [];  // Stores all added phone numbers
-        this.observers = [];     // Stores all registered observers
+        this.phoneNumbers = [];
+        this.observers = [];
     }
 
-    // --- OBSERVER METHODS ---
-
-    addObserver(observer) {
-        // Registers a new observer to the list
-        this.observers.push(observer);
-    }
-
-    removeObserver(observer) {
-        // Removes an observer from the list
-        // The 'filter ()' keyword removes what we don't want
-        this.observers = this.observers.filter(obs => obs !== observer);
-    }
-
-    notifyObservers(phoneNumber) {
-        // Loops through every observer and calls their update() method
-        
-        this.observers.forEach(observer => observer.update(phoneNumber));
-    }
 
     // --- PHONE NUMBER METHODS ---
 
@@ -58,12 +40,34 @@ class Telephone {
             console.log(`Cannot dial ${number}. Not in contacts.`);
         }
     }
+
+
+    // OBSERVER METHODS
+
+    addObserver(observer) {
+        // Registers a new observer to the list
+        this.observers.push(observer);
+    }
+
+    removeObserver(observer) {
+        // Removes an observer from the list
+        // The 'filter ()' keyword removes what we don't want
+        this.observers = this.observers.filter(obs => obs !== observer);
+    }
+
+    notifyObservers(phoneNumber) {
+        // Loops through every observer and calls their update() method
+        
+        this.observers.forEach(observer => observer.update(phoneNumber));
+    }
+
 }
 
 
 
-// 2. BASE OBSERVER CLASS — The contract
 
+
+// 2. BASE OBSERVER CLASS
 
 class Observer {
     update(phoneNumber) {
@@ -74,8 +78,8 @@ class Observer {
 
 
 
-// 3. OBSERVER 1 — Prints the phone number
 
+// 3. OBSERVER 1 — Prints the phone number
 
 class PrintNumberObserver extends Observer {
     update(phoneNumber) {
@@ -87,7 +91,6 @@ class PrintNumberObserver extends Observer {
 
 
 // 4. OBSERVER 2 — Prints "Now Dialling..."
-
 
 class DialingObserver extends Observer {
     update(phoneNumber) {
